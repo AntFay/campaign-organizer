@@ -1,0 +1,30 @@
+{
+  "name": "campaign-organizer",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/electron-starter.js",
+  "dependencies": {
+    "npm-run-all": "^4.1.2",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start-js": "set BROWSER=none&& react-scripts start",
+    "build-js": "react-scripts build",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm-run-all -p build-css build-js",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "electron-dev": "set ELECTRON_START_URL=http://localhost:3000 && electron .",
+    "build-css": "lessc ./src/App.less ./src/App.css",
+    "watch-css": "npm run build-css && less-watch-compiler src src App.less",
+    "clean-css": "find ./src -name '*.css' -type f -delete"
+  },
+  "devDependencies": {
+    "less": "^3.0.1",
+    "electron": "^1.8.4"
+  },
+  "homepage": "./"
+}
